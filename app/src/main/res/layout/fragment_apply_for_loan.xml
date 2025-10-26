@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+
+        <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardLoanInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:backgroundTint="@android:color/white"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- Loan Information Title -->
+                <TextView
+                    android:id="@+id/tvLoanInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Loan Information"
+                    android:textColor="#333"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/etspLoanType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Select Loan Type"
+                    android:inputType="none"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <Spinner
+                    android:id="@+id/spLoanType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+
+                <!-- Loan ID -->
+                <EditText
+                    android:id="@+id/etLoanId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter Loan ID"
+                    android:inputType="text"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- Loan Type (Clickable EditText + Hidden Spinner) -->
+
+
+                <!-- Invoice Amount -->
+                <EditText
+                    android:id="@+id/etInvoiceAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter Invoice Amount"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- Registration Date -->
+                <EditText
+                    android:id="@+id/etRegDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:focusable="false"
+                    android:hint="dd/mm/yyyy"
+                    android:inputType="date"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardDownPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardLoanInfo"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="@android:color/white"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- Down Payment Title -->
+                <TextView
+                    android:id="@+id/tvDownPaymentTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Down Payment Details"
+                    android:textColor="#333"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Total Down Payment -->
+                <EditText
+                    android:id="@+id/etTotalDownPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter Total Down Payment"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- Given Down Payment -->
+                <EditText
+                    android:id="@+id/etGivenDownPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter Given Down Payment"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- Pending Down Payment -->
+                <EditText
+                    android:id="@+id/etPendingDownPayment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter Pending Down Payment"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- Down Payment Due Date -->
+                <EditText
+                    android:id="@+id/etDownPaymentDueDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:focusable="false"
+                    android:hint="dd/mm/yyyy"
+                    android:inputType="date"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ========================= -->
+        <!-- EMI Details Section -->
+        <!-- ========================= -->
+        <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardEMIDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardDownPayment"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="@android:color/white"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- EMI Details Title -->
+                <TextView
+                    android:id="@+id/tvEMIDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="EMI Details"
+                    android:textColor="#333"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- EMI Start Date -->
+                <EditText
+                    android:id="@+id/etEMIStartDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:focusable="false"
+                    android:hint="Start Date (dd/mm/yyyy)"
+                    android:inputType="date"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- EMI End Date -->
+                <EditText
+                    android:id="@+id/etEMIEndDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:focusable="false"
+                    android:hint="End Date (dd/mm/yyyy)"
+                    android:inputType="date"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- ========================= -->
+        <!-- Customer Information -->
+        <!-- ========================= -->
+        <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardCustomerInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardEMIDetails"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="@android:color/white"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <!-- Section Title -->
+                <TextView
+                    android:id="@+id/tvCustomerInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:text="Customer Information"
+                    android:textColor="#333"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- First Name -->
+                <EditText
+                    android:id="@+id/etFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter First Name"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- Contact Number -->
+                <EditText
+                    android:id="@+id/etContactNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter Contact Number"
+                    android:inputType="phone"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- Alternate Number -->
+                <EditText
+                    android:id="@+id/etAlternateNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter Alternate Number"
+                    android:inputType="phone"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- City -->
+                <EditText
+                    android:id="@+id/etCity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter City"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- Aadhar Number -->
+                <EditText
+                    android:id="@+id/etAadhar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter Aadhar Number"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+                <!-- PAN Number -->
+                <EditText
+                    android:id="@+id/etPan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter PAN Number"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardDocumentUpload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cardCustomerInfo"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="@android:color/white"
+            android:padding="10dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <!-- Title -->
+                <TextView
+                    android:id="@+id/tvDocumentUploadTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Document Upload"
+                    android:textColor="#333333"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <!-- Row 1: Aadhar Front + Aadhar Back -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="6dp"
+                            android:text="Aadhar Card Front:"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/etAadharFront"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_edittext_bg"
+                            android:focusable="false"
+                            android:hint="Choose file"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="6dp"
+                            android:text="Aadhar Card Back:"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/etAadharBack"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_edittext_bg"
+                            android:focusable="false"
+                            android:hint="Choose file"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Row 2: PAN + Customer Photo -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="6dp"
+                            android:text="PAN Card Image:"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/etPanImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_edittext_bg"
+                            android:focusable="false"
+                            android:hint="Choose file"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="6dp"
+                            android:text="Customer Photo:"
+                            android:textColor="#555555"
+                            android:textSize="14sp" />
+
+                        <EditText
+                            android:id="@+id/etCustomerPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/rounded_edittext_bg"
+                            android:focusable="false"
+                            android:hint="Choose file"
+                            android:padding="10dp"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Submit -->
+        <TextView
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cardDocumentUpload"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="80dp"
+            android:background="@drawable/bg_1"
+            android:text="Submit"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</ScrollView>
