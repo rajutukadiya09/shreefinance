@@ -35,22 +35,32 @@
                     android:textColor="#333"
                     android:textSize="18sp"
                     android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/etspLoanType"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/rounded_edittext_bg"
-                    android:hint="Select Loan Type"
-                    android:inputType="none"
-                    android:padding="12dp"
-                    android:textSize="15sp" />
+                    android:layout_height="wrap_content">
 
-                <Spinner
-                    android:id="@+id/spLoanType"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone" />
+                    <TextView
+                        android:id="@+id/etspLoanType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/rounded_edittext_bg"
+                        android:hint="Select Loan Type*"
+                        android:padding="12dp"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <Spinner
+                        android:id="@+id/spLoanType"
+                        android:layout_width="match_parent"
+                        android:spinnerMode="dialog"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
 
                 <!-- Loan ID -->
                 <EditText
@@ -60,9 +70,9 @@
 
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/rounded_edittext_bg"
-                    android:hint="Enter Loan ID"
+                    android:hint="Enter Loan ID*"
                     android:inputType="text"
-                    android:clickable="false"
+                    android:clickable="true"
                     android:focusable="false"
                     android:padding="12dp"
                     android:textSize="15sp" />
@@ -75,22 +85,129 @@
                     android:id="@+id/etInvoiceAmount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="5dp"
                     android:background="@drawable/rounded_edittext_bg"
-                    android:hint="Enter Invoice Amount"
+                    android:hint="Enter Invoice Amount*"
                     android:inputType="numberDecimal"
                     android:padding="12dp"
                     android:textSize="15sp" />
 
                 <!-- Registration Date -->
-                <EditText
+                <TextView
                     android:id="@+id/etRegDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_edittext_bg"
-                    android:focusable="false"
-                    android:hint="dd/mm/yyyy"
-                    android:inputType="date"
+                    android:hint="Registration Date(dd/mm/yyyy)*"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/etIProcessingFees"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Enter Processing Fees"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/etspLoanReferencePerson"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/rounded_edittext_bg"
+                        android:hint="Select Reference Person"
+                        android:padding="12dp"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <Spinner
+                        android:id="@+id/spReference"
+                        android:layout_width="match_parent"
+                        android:spinnerMode="dialog"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/etspProductType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/rounded_edittext_bg"
+                        android:hint="Select Product Type *"
+                        android:padding="12dp"
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <Spinner
+                        android:id="@+id/spProductType"
+                        android:layout_width="match_parent"
+                        android:spinnerMode="dialog"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/etspBrandName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/rounded_edittext_bg"
+                        android:hint="Select Brand Name*"
+                        android:padding="12dp"
+
+                        android:textSize="15sp"
+                        android:textColor="#000000"
+                        android:clickable="true"
+                        android:focusable="true" />
+
+                    <Spinner
+                        android:id="@+id/spBrandName"
+                        android:layout_width="match_parent"
+                        android:spinnerMode="dialog"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone" />
+                </RelativeLayout>
+                <EditText
+                    android:id="@+id/etModelname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Model Name*"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:textSize="15sp" />
+                <EditText
+                    android:id="@+id/etIMEInumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="IMEI number*"
+                    android:inputType="numberDecimal"
                     android:padding="12dp"
                     android:textSize="15sp" />
             </LinearLayout>
@@ -171,7 +288,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_edittext_bg"
                     android:focusable="false"
-                    android:hint="dd/mm/yyyy"
+                    android:hint="Down Payment Due Date(dd/mm/yyyy)"
                     android:inputType="date"
                     android:padding="12dp"
                     android:textSize="15sp" />
@@ -203,7 +320,7 @@
 
                 <!-- EMI Details Title -->
                 <TextView
-                    android:id="@+id/tvEMIDetails"
+                    android:id="@+id/etEMIDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="12dp"
@@ -214,13 +331,38 @@
 
                 <!-- EMI Start Date -->
                 <EditText
+                    android:id="@+id/etNumberOfEMI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:hint="Number Of EMI *"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:visibility="gone"
+                    android:textSize="15sp" />
+                <!-- EMI Start Date -->
+                <EditText
+                    android:id="@+id/etEMIAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_edittext_bg"
+                    android:focusable="false"
+                    android:hint="EMI Amount *"
+                    android:inputType="number"
+                    android:padding="12dp"
+                    android:visibility="gone"
+                    android:textSize="15sp" />
+                <!-- EMI Start Date -->
+                <EditText
                     android:id="@+id/etEMIStartDate"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/rounded_edittext_bg"
                     android:focusable="false"
-                    android:hint="Start Date (dd/mm/yyyy)"
+                    android:hint="Start Date (dd/mm/yyyy) *"
                     android:inputType="date"
                     android:padding="12dp"
                     android:textSize="15sp" />
@@ -232,7 +374,7 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/rounded_edittext_bg"
                     android:focusable="false"
-                    android:hint="End Date (dd/mm/yyyy)"
+                    android:hint="End Date (dd/mm/yyyy) *"
                     android:inputType="date"
                     android:padding="12dp"
                     android:textSize="15sp" />
@@ -281,7 +423,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/rounded_edittext_bg"
-                    android:hint="Enter First Name"
+                    android:hint="Enter First Name *"
                     android:inputType="textPersonName"
                     android:padding="12dp"
                     android:textSize="15sp" />
@@ -293,7 +435,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/rounded_edittext_bg"
-                    android:hint="Enter Contact Number"
+                    android:hint="Enter Contact Number *"
                     android:inputType="phone"
                     android:padding="12dp"
                     android:textSize="15sp" />
@@ -402,7 +544,13 @@
                             android:textColor="#555555"
                             android:textSize="14sp" />
 
-                        <EditText
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                        </RelativeLayout>
+                        <TextView
                             android:id="@+id/etAadharFront"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -428,7 +576,7 @@
                             android:textColor="#555555"
                             android:textSize="14sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/etAadharBack"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -462,7 +610,7 @@
                             android:textColor="#555555"
                             android:textSize="14sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/etPanImage"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -488,7 +636,7 @@
                             android:textColor="#555555"
                             android:textSize="14sp" />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/etCustomerPhoto"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

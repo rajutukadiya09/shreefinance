@@ -4,10 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.shreefinance.R
 import com.shreefinance.activity.DashboardActivity
@@ -49,12 +47,17 @@ class HomeFragment : Fragment() {
         )
 
         val adapter = DashboardAdapter(items) {
+            if (it.title == "Apply For Loan") {
+                parentActivity?.navController?.navigate(
+                    R.id.action_navigation_home_to_applyForLoanFragment,
+                    null
+                )
+            } else {
+                Toast.makeText(requireActivity(), "Coming soon ", Toast.LENGTH_SHORT).show()
 
-            parentActivity?.navController?.navigate(
-                R.id.action_navigation_home_to_applyForLoanFragment,
-                null
-            )
-            Toast.makeText(requireActivity(), "Clicked: ${it.title}", Toast.LENGTH_SHORT).show()
+            }
+
+
         }
 
         _binding?.recyclerDashboard?.adapter = adapter
