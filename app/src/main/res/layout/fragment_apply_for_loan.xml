@@ -149,10 +149,11 @@
                         android:background="@drawable/rounded_edittext_bg"
                         android:hint="Select Product Type *"
                         android:padding="12dp"
+
                         android:textSize="15sp"
                         android:textColor="#000000"
-                        android:clickable="true"
-                        android:focusable="true" />
+                        android:clickable="false"
+                        android:focusable="false" />
 
                     <Spinner
                         android:id="@+id/spProductType"
@@ -265,12 +266,11 @@
                     android:layout_marginBottom="10dp"
                     android:background="@drawable/rounded_edittext_bg"
                     android:hint="Enter Given Down Payment"
-                    android:inputType="numberDecimal"
                     android:padding="12dp"
                     android:textSize="15sp" />
 
                 <!-- Pending Down Payment -->
-                <EditText
+                <TextView
                     android:id="@+id/etPendingDownPayment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

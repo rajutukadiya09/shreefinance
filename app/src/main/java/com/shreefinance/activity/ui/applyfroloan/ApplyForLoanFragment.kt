@@ -27,6 +27,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import androidx.core.widget.addTextChangedListener
 import com.shreefinance.activity.DashboardActivity
 import com.shreefinance.activity.LoginActivity
 import com.shreefinance.api.BrandItem
@@ -98,6 +99,23 @@ class ApplyForLoanFragment : Fragment() {
        // etspLoanType,etInvoiceAmount
         return binding.root
     }
+
+
+    private fun calculateDownPaymentDifference() {
+        val totalText = binding.etTotalDownPayment.text.toString().trim()
+        val givenText = binding.etGivenDownPayment.text.toString().trim()
+
+        val total = totalText.toDoubleOrNull() ?: 0.0
+        val given = givenText.toDoubleOrNull() ?: 0.0
+
+        val remaining = total - given
+
+        // Example: show result in a TextView
+        binding.etPendingDownPayment.text = remaining.toString()
+
+        // Or log it
+        Log.d("DownPayment", "Remaining: $remaining")
+    }
     private fun getBrands(productTypeid: Int) {
         val token = "Bearer " + getAccessToken(requireContext())
         RetrofitClient.api.getBrands(token,productTypeid)
@@ -128,6 +146,14 @@ class ApplyForLoanFragment : Fragment() {
 
     private fun listener()
     {
+        binding.etTotalDownPayment.addTextChangedListener {
+            calculateDownPaymentDifference()
+        }
+
+        binding.etGivenDownPayment.addTextChangedListener {
+            calculateDownPaymentDifference()
+        }
+
         binding.etNumberOfEMI.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(p0: Editable?) {
 
