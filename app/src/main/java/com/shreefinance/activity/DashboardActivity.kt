@@ -59,6 +59,10 @@ class DashboardActivity : AppCompatActivity() {
                          binding.txtTitle.setText("Apply for Loan")
                          binding.imgback.visibility= View.VISIBLE
                      }
+                     R.id.loanListFragment -> {
+                         binding.txtTitle.setText("Loan List")
+                         binding.imgback.visibility= View.VISIBLE
+                     }
 
                      else -> {
                          binding.txtTitle.setText("Home")
@@ -83,6 +87,10 @@ class DashboardActivity : AppCompatActivity() {
         return true
     }
 
+    fun setTitle(title: String)
+    {
+        binding.txtTitle.text=title;
+    }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.itemdata -> {

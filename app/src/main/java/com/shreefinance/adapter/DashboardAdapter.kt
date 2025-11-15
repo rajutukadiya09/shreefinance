@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shreefinance.R
 
 class DashboardAdapter(
-    private val items: List<DashboardItem>,
+    private var items: List<DashboardItem>,
     private val onClick: (DashboardItem) -> Unit
 ) : RecyclerView.Adapter<DashboardAdapter.ViewHolder>() {
 
@@ -32,8 +32,13 @@ class DashboardAdapter(
         holder.title.text = item.title
         holder.itemView.setOnClickListener { onClick(item) }
     }
+    fun updateData(newItems: List<DashboardItem>) {
+        items = newItems
+        notifyDataSetChanged()
+    }
 }
 data class DashboardItem(
     val title: String,
-    val icon: Int
+    val icon: Int,
+    var visible: Boolean = false
 )

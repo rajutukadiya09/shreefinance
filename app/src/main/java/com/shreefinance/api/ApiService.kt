@@ -21,6 +21,11 @@ interface ApiService {
     fun logoutUser(
         @Header("Authorization") token: String
     ): Call<LogoutResponse>
+    @GET("api/get-loans")
+    fun getLoans(@Header("Authorization") token: String): Call<LoanResponse>
+
+    @GET("api/get-permissions")
+    fun getPermissions( @Header("Authorization") token: String): Call<PermissionsResponse>
 
     @GET("api/get-loan-id")
     fun getLoanId(
@@ -96,7 +101,28 @@ data class ProductTypeResponse(
     val data: List<ProductTypeItem>,
     val statusCode: Int
 )
+data class PermissionsResponse(
+    val status: Boolean,
+    val error: String?,
+    val message: String,
+    val data: UserData,
+    val statusCode: Int
+)
 
+data class UserData(
+    val name: String,
+    val permissions: Permissions
+)
+
+data class Permissions(
+    val apply_for_loan: Boolean,
+    val view_loan_information: Boolean,
+    val collection: Boolean,
+    val due: Boolean,
+    val overdue: Boolean,
+    val penalty: Boolean,
+    val other: Boolean
+)
 data class ProductTypeItem(
     val id: Int,
     val type: String
@@ -140,6 +166,41 @@ data class ReferenceItem(
     val id: Int,
     val name: String,
     val mobile_number: String
+)
+data class LoanResponse(
+    val status: Boolean,
+    val error: String?,
+    val message: String,
+    val data: List<LoanData>
+)
+
+data class LoanData(
+    val loan_id: String,
+    val customer_name: String,
+    val loan_type: Int,
+    val mobile_number: String,
+    val user_id: Int?,
+    val amount: String,
+    val loan_status: String,
+    val emi_summary: EmiSummary,
+    val emis: List<Emi>
+)
+
+data class EmiSummary(
+    val total_emi_amount: Double,
+    val paid_amount: Double,
+    val pending_amount: Double,
+    val paid_emi_count: Int,
+    val pending_emi_count: Int,
+    val overdue_emi_count: Int
+)
+
+data class Emi(
+    val id: Int,
+    val loan_id: String,
+    val emi_amount: String,
+    val due_date: String,
+    val emi_status: Int
 )
 
 data class ProductType(

@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
     private const val BASE_URL = "http://103.194.228.39:8080/"
+   // private const val BASE_URL = "https://shree-finance.buzz/"
 
     private val retrofit by lazy {
         val logging = HttpLoggingInterceptor()

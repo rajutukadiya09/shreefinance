@@ -17,8 +17,12 @@
             android:id="@+id/action_navigation_home_to_navigation_dashboard"
             app:destination="@id/navigation_dashboard" />
 
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_dashboard2"
+            app:destination="@id/navigation_dashboard" />
 
-
+        <action android:id="@+id/action_navigation_home_to_loanListFragment"
+            app:destination="@id/loanListFragment" />
     </fragment>
 
     <fragment
@@ -43,6 +47,16 @@
         tools:layout="@layout/fragment_apply_for_loan" >
         <action
             android:id="@+id/action_applyForLoanFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/loanListFragment"
+        android:name="com.shreefinance.activity.ui.loanlist.LoanListFragment"
+        android:label="Apply Loan"
+        tools:layout="@layout/fragment_loan_list" >
+
+        <action
+            android:id="@+id/action_loanListFragment_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
 </navigation>
